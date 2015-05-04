@@ -1,1 +1,136 @@
-// PUT YOUR CODE HERE!!!
+
+var average = function(array){
+	combined = 0
+	for (i = 0 ; i < array.length ; i++) {
+		combined += array[i]
+	}
+	return (combined / array.length)
+};
+
+//console.log (average([2,6]))
+
+var contains = function(array, element){
+	for (i = 0 ; i < array.length ; i++)
+		if (array[i] === element) {
+			return true
+		}
+
+}
+
+//console.log (contains([1,2,3],3))
+
+var first = function(array) {
+	return (array[0])
+}
+//console.log(first([1,2,3,4,5]))
+
+var last = function(array) {
+	return (array[array.length-1])
+}
+//console.log(last([1,2,3,4,5]))
+
+var max = function(array){
+	largest = array[0]
+	for (i = 1 ; i < array.length; i++)
+		if (array[i] > largest) {
+			largest = array [i]
+		}
+		return largest
+}
+
+//console.log(max([1,2,17,4,5]))
+
+var min = function(array){
+	smallest = array[0];
+	for (i = 1 ; i < array.length; i++)
+		if (array[i] < smallest) {
+			smallest = array[i];
+		}
+		return smallest;
+};
+
+// console.log(min([1,2,17,4,5]));
+
+var shuffle = function(array) {
+	for (i = 0 ; i < array.length - 1 ; i++) {
+//		console.log (i, array.length - 1);
+//		console.log (array);
+		var random = Math.floor((Math.random()*array.length - 1) + 1 );
+		var temp = array[i];
+		array[i] = array[random];
+		array[random] = temp;
+	}
+	return array;
+};
+// console.log (shuffle([1,2,3,4,5,6,7]));
+
+var sample = function(array, size) {
+	if (size === undefined) {
+		size = 1;
+	}
+
+	var newArr = [];
+	for (i = 0 ; newArr.length < size ; i++) {
+		var random = Math.floor((Math.random()*array.length - 1) + 1 );
+		
+		var dup = false;
+		for (r = 0 ; r < newArr.length ; r++) {
+			if (newArr[r] === array[random]) {
+				dup = true;
+			}
+		}
+		if (dup !== true) {
+			newArr.push(array[random]);
+		}
+	}
+	return newArr;
+
+};
+// console.log (sample([1,2,3,4,5,6,7], 5));
+
+var difference = function(array1, array2) {
+	var diff = [];
+	for (i = 0 ; i < array1.length ; i++) {
+		var duplicate = false;
+		for (q = 0 ; q < array2.length ; q++) {
+			if ((array1[i]) === array2[q]) {
+				duplicate = true;
+			}
+
+		}
+		if (duplicate === false) {
+			diff.push (array1[i]);
+		}
+	}
+	return diff;
+}
+
+console.log(difference([1, 2, 3, 4, 5], [5, 2, 10]));
+
+var indexOf = function(array, element) {
+	for (i = 0 ; i < array.length ; i++) {
+		if (array[i] === element) {
+			return array[i]
+		}
+	}
+	return (-1)
+};
+console.log (indexOf([1,2,3], 2));
+
+var pluck = function (list, name) {
+	arr = [];
+	for (i = 0 ; i < list.length ; i++) {
+	arr.push(list[i].name);
+	}
+	return (arr);
+
+};
+
+var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+console.log(pluck(stooges, 'name'));
+
+
+
+ 
+
+
