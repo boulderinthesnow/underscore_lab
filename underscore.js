@@ -105,17 +105,17 @@ var difference = function(array1, array2) {
 	return diff;
 }
 
-console.log(difference([1, 2, 3, 4, 5], [5, 2, 10]));
+//console.log(difference([1, 2, 3, 4, 5], [5, 2, 10]));
 
 var indexOf = function(array, element) {
 	for (i = 0 ; i < array.length ; i++) {
 		if (array[i] === element) {
-			return array[i]
+			return [i]
 		}
 	}
 	return (-1)
 };
-console.log (indexOf([1,2,3], 2));
+//console.log (indexOf([1,2,3], 2));
 
 var pluck = function (list, name) {
 	arr = [];
@@ -128,6 +128,56 @@ var pluck = function (list, name) {
 
 var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
 console.log(pluck(stooges, 'name'));
+
+//******************************
+// lab part II
+//******************************
+var each = function(arr, func) {
+	for (item in arr) {
+	//	console.log(item)
+		func(arr[item]);
+	}
+}
+
+//each([1,2,3], console.log)
+
+var compact = function(arr){
+	var newArr = [];
+	for (x in arr){
+		if (arr[x] != undefined) {
+			newArr.push(arr[x])
+		}
+	}
+	return (newArr)
+}
+
+// console.log(compact([1, "hello", undefined, 3, undefined]))
+
+var mapArray = function(arr, func){
+	var newArr = [];
+	for (x in arr) {
+		newArr.push(func(arr[x]))
+	}
+	return newArr;
+}
+
+var finished = mapArray(["cats", "before", "dogs"], function(num) {return num.toUpperCase(); })
+//console.log(finished)
+
+var filter = function(arr, func) {
+	var newArr = []
+	for (item in arr) {
+		if (func(arr[item]) === true) {
+//			console.log (func(arr[item]))
+//			console.log (arr, "arr", item, "item")
+			newArr.push(arr[item]);
+//			console.log(newArr, "newArr")
+		}
+	}
+return newArr
+}
+
+console.log (filter([1,2,3,4,5,6],function(num){ return num % 2 == 0; }))
 
 
 
