@@ -1,15 +1,15 @@
 module.exports = {
 
-		var average = function(array){
+		 average: function(array){
 			combined = 0
 			for (i = 0 ; i < array.length ; i++) {
 				combined += array[i]
 			}
 			return (combined / array.length)
-		};
+		}
 
 	//console.log (average([2,6]))
-
+}
 	var contains = function(array, element){
 		for (i = 0 ; i < array.length ; i++)
 			if (array[i] === element) {
@@ -178,7 +178,7 @@ module.exports = {
 	return newArr
 	}
 
-}
+
 
 //console.log (filter([1,2,3,4,5,6],function(num){ return num % 2 == 0; }))
 
