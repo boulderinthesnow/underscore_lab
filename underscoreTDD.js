@@ -6,53 +6,53 @@ module.exports = {
 				combined += array[i]
 			}
 			return (combined / array.length)
-		}
+		},
 
 	//console.log (average([2,6]))
-}
-	var contains = function(array, element){
+
+	 contains: function(array, element){
 		for (i = 0 ; i < array.length ; i++)
 			if (array[i] === element) {
 				return true
 			}
 
-		}
-
+		},
+	///
 	//console.log (contains([1,2,3],3))
 
-	var first = function(array) {
+	 first: function(array) {
 		return (array[0])
-	}
+	},
 	//console.log(first([1,2,3,4,5]))
 
-	var last = function(array) {
+	 last: function(array) {
 		return (array[array.length-1])
-	}
+	},
 	//console.log(last([1,2,3,4,5]))
 
-	var max = function(array){
+	max: function(array){
 		largest = array[0]
 		for (i = 1 ; i < array.length; i++)
 			if (array[i] > largest) {
 				largest = array [i]
 			}
 			return largest
-		}
+		},
 
 	//console.log(max([1,2,17,4,5]))
 
-	var min = function(array){
+	 min: function(array){
 		smallest = array[0];
 		for (i = 1 ; i < array.length; i++)
 			if (array[i] < smallest) {
 				smallest = array[i];
 			}
 			return smallest;
-		};
+		},
 
 	// console.log(min([1,2,17,4,5]));
 
-	var shuffle = function(array) {
+	 shuffle: function(array) {
 		for (i = 0 ; i < array.length - 1 ; i++) {
 	//		console.log (i, array.length - 1);
 	//		console.log (array);
@@ -62,10 +62,10 @@ module.exports = {
 	array[random] = temp;
 	}
 	return array;
-	};
+	},
 	// console.log (shuffle([1,2,3,4,5,6,7]));
 
-	var sample = function(array, size) {
+	 sample: function(array, size) {
 		if (size === undefined) {
 			size = 1;
 		}
@@ -86,10 +86,10 @@ module.exports = {
 		}
 		return newArr;
 
-	};
+	},
 	// console.log (sample([1,2,3,4,5,6,7], 5));
 
-	var difference = function(array1, array2) {
+	 difference: function(array1, array2) {
 		var diff = [];
 		for (i = 0 ; i < array1.length ; i++) {
 			var duplicate = false;
@@ -105,7 +105,7 @@ module.exports = {
 		}
 		return diff;
 	}
-
+}
 	//console.log(difference([1, 2, 3, 4, 5], [5, 2, 10]));
 
 	var indexOf = function(array, element) {
@@ -177,6 +177,7 @@ module.exports = {
 		}
 	return newArr
 	}
+
 
 
 
